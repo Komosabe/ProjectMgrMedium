@@ -1,1 +1,40 @@
-﻿
+﻿@model CarWorkshop.Domain.Entities.CarWorkshop
+
+<div class="container mt-4">
+    <h2>Dodaj nowy warsztat</h2>
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Nazwa</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Opis</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="About" class="form-label">O warsztacie</label>
+            <textarea asp-for="About" class="form-control"></textarea>
+        </div>
+        <fieldset class="border p-3 mb-3">
+            <legend class="w-auto px-2">Dane kontaktowe</legend>
+            <div class="mb-3">
+                <label asp-for="ContactDetails.PhoneNumber" class="form-label">Telefon</label>
+                <input asp-for="ContactDetails.PhoneNumber" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactDetails.Street" class="form-label">Ulica</label>
+                <input asp-for="ContactDetails.Street" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactDetails.City" class="form-label">Miasto</label>
+                <input asp-for="ContactDetails.City" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactDetails.PostalCode" class="form-label">Kod pocztowy</label>
+                <input asp-for="ContactDetails.PostalCode" class="form-control" />
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+        <button type="reset" class="btn btn-secondary">Wyczyść</button>
+    </form>
+</div>
