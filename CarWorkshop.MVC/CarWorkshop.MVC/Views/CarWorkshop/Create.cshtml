@@ -1,4 +1,6 @@
-﻿@model CarWorkshop.Application.CarWorkshop.CarWorkshopDto
+﻿@using CarWorkshop.Application.CarWorkshop;
+
+@model CarWorkshopDto
 
 <div class="container mt-4">
     <h2>Dodaj nowy warsztat</h2>
@@ -6,10 +8,12 @@
         <div class="mb-3">
             <label asp-for="Name" class="form-label">Nazwa</label>
             <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Description" class="form-label">Opis</label>
             <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="About" class="form-label">O warsztacie</label>
@@ -20,6 +24,7 @@
             <div class="mb-3">
                 <label asp-for="ContactDetails.PhoneNumber" class="form-label">Telefon</label>
                 <input asp-for="ContactDetails.PhoneNumber" class="form-control" />
+                <span asp-validation-for="ContactDetails.PhoneNumber" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="ContactDetails.Street" class="form-label">Ulica</label>
@@ -38,3 +43,9 @@
         <button type="reset" class="btn btn-secondary">Wyczyść</button>
     </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
