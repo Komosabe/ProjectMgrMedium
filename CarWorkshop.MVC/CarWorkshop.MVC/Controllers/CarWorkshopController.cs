@@ -14,6 +14,13 @@ namespace CarWorkshop.MVC.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var workshops = await _carWorkshopService.GetAll();
+            return View(workshops);
+        }
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View(new CarWorkshopDto());

@@ -18,6 +18,10 @@ namespace CarWorkshop.Application.Mappings
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore());
 
             CreateMap<ContactDetailsDto, CarWorkshopContactDetails>();
+
+            CreateMap<Domain.Entities.CarWorkshop, CarWorkshopDto>();
+            CreateMap<CarWorkshopContactDetails, ContactDetailsDto>();
+
         }
     }
 }
