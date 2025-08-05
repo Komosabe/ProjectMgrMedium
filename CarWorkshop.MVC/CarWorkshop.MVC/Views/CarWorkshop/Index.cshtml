@@ -13,7 +13,7 @@
                         <p class="card-text"><small class="text-muted">@workshop.ContactDetails.City</small></p>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
-                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@workshop.Name">Details</a>
+                        <a class="btn btn-primary btn-sm me-2" asp-controller="CarWorkshop" asp-action="Details" asp-route-encodedName="@workshop.Name">Details</a>
                         <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@workshop.Name">Edit</a>
                     </div>
                 </div>
