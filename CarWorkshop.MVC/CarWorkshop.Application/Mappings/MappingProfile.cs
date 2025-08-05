@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CarWorkshop.Application.CarWorkshop;
+using CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop;
 using CarWorkshop.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace CarWorkshop.Application.Mappings
             CreateMap<Domain.Entities.CarWorkshop, CarWorkshopDto>();
             CreateMap<CarWorkshopContactDetails, ContactDetailsDto>();
 
+            CreateMap<CarWorkshopDto, EditCarWorkshopCommand>();
         }
     }
 }
