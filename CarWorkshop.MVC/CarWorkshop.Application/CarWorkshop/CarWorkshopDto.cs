@@ -14,6 +14,8 @@ namespace CarWorkshop.Application.CarWorkshop
         public string? About { get; set; }
 
         public ContactDetailsDto ContactDetails { get; set; } = new();
+
+        public bool IsEditable { get; set; }
     }
 
     public class ContactDetailsDto
