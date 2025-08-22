@@ -25,7 +25,7 @@ namespace CarWorkshop.Application.Mappings
 
             CreateMap<Domain.Entities.CarWorkshop, CarWorkshopDto>()
                 .ForMember(dest => dest.IsEditable,
-                    opt => opt.MapFrom(src => user != null && src.CreatedById == user.Id));
+                    opt => opt.MapFrom(src => user != null && (src.CreatedById == user.Id || user.IsInRole("Moderator"))));
             CreateMap<CarWorkshopContactDetails, ContactDetailsDto>();
 
             CreateMap<CarWorkshopDto, EditCarWorkshopCommand>();
