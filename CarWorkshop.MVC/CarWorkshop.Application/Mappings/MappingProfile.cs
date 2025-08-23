@@ -29,6 +29,8 @@ namespace CarWorkshop.Application.Mappings
             CreateMap<CarWorkshopContactDetails, ContactDetailsDto>();
 
             CreateMap<CarWorkshopDto, EditCarWorkshopCommand>();
+            CreateMap<CarWorkshopService, CarWorkshopServiceDto>();
+            CreateMap<CarWorkshopServiceDto, CarWorkshopService>();
         }
     }
 }
